@@ -19,6 +19,7 @@ body {
   color: var(--main-color);
   font-family: 'Roboto', sans-serif;
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -180,7 +181,7 @@ a {
   top: 0;
   left: 0;
   opacity: 1;
-  transition: opasity 250ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function);
 
   width: 100%;
   height: 1024px;
@@ -331,7 +332,36 @@ a {
 .work-item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
+.work-position {
+  position: relative;
+}
+.work-img {
+  display: block;
+  max-width: 370px;
+  height: auto;
+}
+.work-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  background: rgba(47, 48, 58, 0.8);
+  color: var(--white-text-color);
+}
 /* Team */
 
 .team {
@@ -623,7 +653,7 @@ a {
   background: rgba(33, 150, 243, 0.9);
 }
 
-.container-ovelay:hover .text-overlay {
+.projects-item:hover .text-overlay {
   transform: translateY(0);
 }
 .container-ovelay {
