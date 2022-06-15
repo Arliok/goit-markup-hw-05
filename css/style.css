@@ -36,6 +36,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  z-index: -1;
 }
 a {
   text-decoration: none;
@@ -66,7 +67,7 @@ a {
 
 /* Header */
 
-.header-section {
+.header-section-1 {
   border-bottom: 1px solid #ececec;
 }
 .main-nav {
@@ -106,6 +107,44 @@ a {
 .logo-light {
   color: var(--white-text-color);
 }
+.nav-menu-link {
+  position: relative;
+  color: var(--accent-color);
+  cursor: pointer;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.nav-menu-link::after {
+  border-radius: 5px;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--accent-color);
+  content: '';
+  transition: width 0.25s ease-out;
+}
+.nav-menu-link::after .visible {
+  width: 100%;
+  background-color: var(--accent-color);
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+.nav-menu-link:hover:after,
+:focus:after {
+  width: 100%;
+}
 .nav-menu-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -123,9 +162,11 @@ a {
 .nav-menu-link:focus {
   color: var(--accent-color);
 }
-.nav-menu-link.current {
+
+.nav-menu-item .active {
   color: var(--accent-color);
 }
+
 .contact {
   margin-left: auto;
 }
@@ -187,6 +228,7 @@ a {
   height: 1024px;
 
   background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .hero-backdrop.is-hidden {
   opacity: 0;
@@ -197,6 +239,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 40px;
+
   transform: translate(-50%, -50%);
 
   width: 528px;
@@ -565,6 +609,7 @@ a {
   border-radius: 4px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: var(--timing-function);
 }
 
 .projects-container {
